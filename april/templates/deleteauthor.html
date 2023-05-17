@@ -1,0 +1,13 @@
+{% extends 'inc/nav.html' %}
+{% block title %}Delete Author{% endblock title %}
+{% block content %}
+<p> Are your sure you want to delete author: {{author.name}} of age:{{author.age}}?
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
+
+
+<a href="{% url 'author' %}" class="m-5 btn btn-primary">Cancel</a>
+{% endblock content %}

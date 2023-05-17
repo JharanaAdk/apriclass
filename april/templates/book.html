@@ -1,0 +1,32 @@
+{% extends 'inc/nav.html' %}
+{% block title %}Book{% endblock title %}
+{% block content %}
+<a href="{% url 'createbook' %}" class="m-5 btn btn-success">Create</a>
+<table class="table table-bordered m-2 p-2">
+    <thead>
+      <tr>
+        <th scope="col">S.N.</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for book in book %}
+      <tr>
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.book_name}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td>
+            <a href="#" class="btn btn-warning">Edit</a>
+            <a href="{% url 'readbook' book.id %}" class="btn btn-primary">Read</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+        
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

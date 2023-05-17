@@ -1,0 +1,12 @@
+{% extends 'inc/nav.html' %}
+{% block title %}Create Books Page{% endblock title %}
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>
+
+
+{% endblock content %}

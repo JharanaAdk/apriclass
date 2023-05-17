@@ -1,0 +1,21 @@
+{% extends 'inc/nav.html' %}
+{% block title %}
+Readauthor
+{% endblock title %}
+
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{author.name}}</h5>
+      <p class="card-text">{{author.penname}}</p>
+      <p class="card-text">{{author.active_date}}</p>
+      <p class="card-text">{{author.journal}}</p>
+      <a href="#" class="btn btn-primary">{{author.age}}</a>
+    </div>
+  </div>
+
+  <a href="{% url 'author' %}" class="m-5 btn btn-primary">Back</a>
+{% endblock content %}
+
+

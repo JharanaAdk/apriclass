@@ -1,0 +1,22 @@
+{% extends 'inc/nav.html' %}
+{% block title %}
+index page
+{% endblock title %}
+{% block content %}
+{% include 'inc/slider.html' %}
+<div class="row">
+    {% for items in author %}
+    <div class="col-md-4">
+
+        <div class="card-body border">
+            <h5 class="card-title">{{items.name}}</h5>
+            <h6 class="card-title">{{items.active_date}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{items.penname}}</h6>
+            <p class="card-text">{{items.age}}</p>
+            <a href="#" class="card-link">{{items.journal}}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

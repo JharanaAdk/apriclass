@@ -1,0 +1,23 @@
+{% extends 'inc/nav.html' %}
+{% block title %}
+Readauthor
+{% endblock title %}
+
+
+{% block content %}
+<h1 class="text-center card-title">{{book.book_name}}</h1>
+<div  class="text-center card" style="width: 40rem; margin-left:450px;">
+    <img src="{{ book.image.url }}" class="text-center card-img-top" alt="{{ book.book_name }}">
+
+    <div class="card-body"> 
+             <h5 class="card-title">{{book.book_name}}</h5>
+      <p class="card-text">{{book.author}}</p>
+      <p class="card-text">{{book.published_date}}</p>
+      <p class="card-text">{{book.price}}</p>
+    </div>
+  </div>
+
+  <a href="{% url 'book' %}" class="m-5 btn btn-primary">Back</a>
+{% endblock content %}
+
+
