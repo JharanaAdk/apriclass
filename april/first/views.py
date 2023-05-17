@@ -84,8 +84,15 @@ def createbook(request):
     return render(request, 'book/createbook.html', context={'form':bookform})
 
 
-
 def readbook(request, book_id):
+    book = Book.objects.get(id = book_id)
+    context={
+        'book':book
+    }
+    return render(request, 'book/readbook.html', context)
+
+
+def readbookoo(request, book_id):
     book = Book.objects.get(id = book_id)
     context={
         'book':book
