@@ -98,3 +98,5 @@ def readbookoo(request, book_id):
         'book':book
     }
     return render(request, 'book/readbook.html', context)
+
+
